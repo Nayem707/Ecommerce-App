@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { NavLink } from "react-router-dom";
+
 const Products = () => {
   const [data, setData] = useState([]);
   const [filter, setFilter] = useState(data);
@@ -43,55 +44,50 @@ const Products = () => {
           </button>
           <button
             className="btn btn-dark me-2"
-            onClick={() => filterProduct("men's clothing")}
-          >
-            Menhrefs
+            onClick={() => filterProduct("men's clothing")}>
+            Men
           </button>
           <button
             className="btn btn-dark me-2"
-            onClick={() => filterProduct("women's clothing")}
-          >
+            onClick={() => filterProduct("women's clothing")}>
             Womens
           </button>
           <button
             className="btn btn-dark me-2"
-            onClick={() => filterProduct("jewelery")}
-          >
+            onClick={() => filterProduct("jewelery")}>
             Jewelery
           </button>
           <button
             className="btn btn-dark me-2"
-            onClick={() => filterProduct("electronics")}
-          >
+            onClick={() => filterProduct("electronics")}>
             Electronics
           </button>
         </div>
 
         {filter.map((product) => {
+          const { image, title, id, price } = product;
           return (
-            <div className="d-flex justify-item-center" key={product.id}>
-              <div className="col-md-3 mb-4">
-                <div
-                  className="card h-100 text-center p-4"
-                  style={{ width: "18rem" }}
-                >
-                  <img
-                    src={product.image}
-                    className="card-img-top"
-                    alt={product.title}
-                    height="250px"
-                  />
-                  <div className="card-body">
-                    <h5 className="card-title">
-                      {product.title.substring(0, 12)}
-                    </h5>
-                    <p className="card-text">${product.price}</p>
-                    <NavLink
-                      to={`/products/${product.id}`}
-                      className="btn btn-primary"
-                    >
-                      Buy Now
-                    </NavLink>
+            <div className="container" key={product.id}>
+              <div className="row">
+                <div className="col-md-3 mb-4">
+                  <div
+                    className="card h-100 text-center p-4"
+                    style={{ width: "18rem" }}>
+                    <img
+                      src={image}
+                      className="card-img-top"
+                      alt={title}
+                      height="250px"
+                    />
+                    <div className="card-body">
+                      <h5 className="card-title">{title.substring(0, 12)}</h5>
+                      <p className="card-text">${price}</p>
+                      <NavLink
+                        to={`/products/${id}`}
+                        className="btn btn-primary">
+                        Buy Now
+                      </NavLink>
+                    </div>
                   </div>
                 </div>
               </div>

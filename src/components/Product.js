@@ -22,7 +22,7 @@ const Product = () => {
       setLoading(false);
     };
     getProduct();
-  }, []);
+  }, [id]);
 
   const Loading = () => {
     return <h1>Loading...</h1>;
@@ -31,24 +31,23 @@ const Product = () => {
   const ShowProduct = () => {
     return (
       <>
-        <div className="col-md-6 pt-5">
-          <NavLink className="btn btn-dark m-5" to="/products">
+        <div className="col-md-4 pt-5">
+          <NavLink className="btn btn-outline-primary" to="/products">
             Back
           </NavLink>
           <img
             src={product.image}
             alt={product.title}
-            className="image-fluid"
+            className="object-fit-contain"
             height={400}
           />
         </div>
-        <div className="col-md-6 pt-5">
+        <div className="col-md-7 pt-md-5">
           <h3 className="">{product.title}</h3>
           <p>{product.description}</p>
           <button
             className="btn btn-outline-dark m-2"
-            onClick={() => addProduct(product)}
-          >
+            onClick={() => addProduct(product)}>
             Add to Cart
           </button>
           <button className="btn btn-outline-dark m-2">Go to Cart</button>

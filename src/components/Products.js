@@ -38,62 +38,62 @@ const Products = () => {
   const ShowProducts = () => {
     return (
       <>
-        <div className="buttons d-flex justify-item-center mb-4 pb-5">
+        <div className="buttons d-flex justify-item-center mb-sm-4">
           <button className="btn btn-dark me-2" onClick={() => setFilter(data)}>
             All
           </button>
           <button
-            className="btn btn-dark me-2"
+            className="btn btn-outline-dark me-2"
             onClick={() => filterProduct("men's clothing")}>
             Men
           </button>
           <button
-            className="btn btn-dark me-2"
+            className="btn btn-outline-dark me-2"
             onClick={() => filterProduct("women's clothing")}>
             Womens
           </button>
           <button
-            className="btn btn-dark me-2"
+            className="btn btn-outline-dark me-2"
             onClick={() => filterProduct("jewelery")}>
             Jewelery
           </button>
           <button
-            className="btn btn-dark me-2"
+            className="btn btn-outline-dark me-2"
             onClick={() => filterProduct("electronics")}>
             Electronics
           </button>
         </div>
 
-        {filter.map((product) => {
-          const { image, title, id, price } = product;
-          return (
-            <div className="container" key={product.id}>
-              <div className="row">
-                <div className="col-md-3 mb-4">
+        <div className="container">
+          <div className="row">
+            {filter.map((product) => {
+              const { image, title, id, price } = product;
+              return (
+                <div className="col-md-3 mb-sm-3">
                   <div
-                    className="card h-100 text-center p-4"
-                    style={{ width: "18rem" }}>
+                    className="card h-100 text-center p-sm-2 shadow bg-body-dark"
+                    style={{ width: "13.5rem" }}>
                     <img
                       src={image}
-                      className="card-img-top"
+                      className="card-img-top object-fit-contain"
                       alt={title}
-                      height="250px"
+                      height="200px"
                     />
                     <div className="card-body">
                       <h5 className="card-title">{title.substring(0, 12)}</h5>
                       <p className="card-text">${price}</p>
                       <NavLink
                         to={`/products/${id}`}
-                        className="btn btn-primary">
-                        Buy Now
+                        className="btn btn-outline-dark">
+                        Add Cart
                       </NavLink>
                     </div>
                   </div>
                 </div>
-              </div>
-            </div>
-          );
-        })}
+              );
+            })}
+          </div>
+        </div>
       </>
     );
   };

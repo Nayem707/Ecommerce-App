@@ -10,7 +10,7 @@ const Navbar = () => {
     <nav className="navbar navbar-expand-lg bg-light">
       <div className="container">
         <NavLink className="navbar-brand fw-bold fs-4" to="/">
-          Chess24
+          Gangsn490
         </NavLink>
         <button
           className="navbar-toggler"
@@ -19,8 +19,7 @@ const Navbar = () => {
           data-bs-target="#navbarSupportedContent"
           aria-controls="navbarSupportedContent"
           aria-expanded="false"
-          aria-label="Toggle navigation"
-        >
+          aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
         <div className="collapse navbar-collapse" id="navbarSupportedContent">
@@ -41,8 +40,7 @@ const Navbar = () => {
                 to="#d"
                 role="button"
                 data-bs-toggle="dropdown"
-                aria-expanded="false"
-              >
+                aria-expanded="false">
                 Category
               </NavLink>
               <ul className="dropdown-menu">
@@ -73,8 +71,7 @@ const Navbar = () => {
           <div className="buttons-icon">
             <NavLink
               className="btn btn-outline-success position-relative"
-              to="/cart"
-            >
+              to="/cart">
               <i className="fa-sharp fa-solid fa-cart-shopping">
                 <span className="position-absolute top-0 start-20 translate-middle badge rounded-pill bg-danger">
                   {state.length}
